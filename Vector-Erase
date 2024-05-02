@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin >> n;
+    vector<int> ar(n);
+    for(int i = 0; i < ar.size(); i++)
+    {
+            cin >> ar[i];
+    }
+    int a;
+    cin >> a;
+    int b, c;
+    cin >> b >> c;
+    ar.erase(ar.begin() + a - 1 );
+//      for(int x:ar){
+//             cout << x << " " ;
+//     }
+    ar.erase(ar.begin() + b - 1 , ar.begin() + c - 1);
+cout << ar.size() << endl;
+    for(int x:ar){
+            cout << x << " ";
+    }
+    return 0;
+}
