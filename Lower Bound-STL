@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    
+    int n;
+    cin >> n;
+    vector<int> vec(n);
+    for(auto &a : vec){
+            cin >> a;
+    }
+    
+    int q;
+    cin >> q;
+    
+    while(q--){
+            int x;
+            cin >> x;
+            auto it = lower_bound(vec.begin(),vec.end(), x);
+            if(it != vec.end() && *it == x){
+                    cout << "Yes " << (it - vec.begin() + 1) << endl;
+            }
+            else {
+                    cout << "No " << (it - vec.begin() + 1) << endl;
+            }
+    }
+    
+    return 0;
+}
